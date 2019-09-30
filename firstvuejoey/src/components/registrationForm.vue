@@ -7,8 +7,7 @@
           title="SIGN UP"
           style="box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); margin-top: 100px"
         >
-          <b-form @submit="onSubmit" v-if="show">
-
+          <b-form @submit="submit" v-if="show">
             <b-form-group id="lastName">
               <b-form-input
                 id="userLastName"
@@ -45,7 +44,7 @@
                 v-model="form.initialPassword"
                 type="password"
                 required
-                placeholder="Password"
+                placeholder="New Password"
               ></b-form-input>
             </b-form-group>
 
@@ -55,11 +54,11 @@
                 v-model="form.confirmedPassword"
                 type="password"
                 required
-                placeholder="Confirm Password"
+                placeholder="Current Password"
               ></b-form-input>
             </b-form-group>
 
-            <b-button type="submit" variant="primary">Submit</b-button>
+            <b-button id="btnSubmit" type="submit" variant="primary">Submit</b-button>
           </b-form>
         </b-card>
       </b-col>
@@ -68,25 +67,37 @@
     </b-row>
   </b-container>
 </template>
+
+
+
 <script>
+import AUTH from "services/auth";
 export default {
   data() {
     return {
+      auth: AUTH,
       form: {
         userLastName: "",
         userFirstName: "",
         userEmail: "",
         initialPassword: "",
-        confirmedPassword: "",
+        confirmedPassword: ""
       },
-      show: true
+     show: true
     };
   },
-  // methods: {
-  //   onSubmit(evt) {
-  //     evt.preventDefault();
-  //     console.log(JSON.stringify(this.form));
-  //   }
-  // }
+  methods: {
+    submit(evt) {
+      evt.preventDefault();
+        sessionStorage.setItem("userLastName", this.form.userLastName),
+        sessionStorage.setItem("userFirstName", this.form.userFirstName),
+        sessionStorage.setItem("userEmail", this.form.userEmail),
+        sessionStorage.setItem("initialPassword", this.form.initialPassword),
+        sessionStorage.setItem("confirmedPassword",this.form.confirmedPassword),
+        AUTH.register(this.form.userEmail, this.form.confirmedPassword)
+
+        
+    }
+  }
 };
 </script>

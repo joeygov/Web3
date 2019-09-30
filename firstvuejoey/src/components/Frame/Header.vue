@@ -7,7 +7,7 @@
       <b-collapse id="nav-collapse" is-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-item id="homeLogin" v-on:click="redirect('/form')" size="lg" variant="light">LOG IN</b-nav-item>
+          <b-nav-item id="homeLogin" v-on:click="redirect('/Login')" size="lg" variant="light">LOG IN</b-nav-item>
           <b-nav-item id="homeSignUp" v-on:click="redirect('/registrationForm')" size="lg">SIGN UP</b-nav-item>
         </b-navbar-nav>
       </b-collapse>

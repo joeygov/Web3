@@ -6,11 +6,11 @@
         title="Log IN"
         style="box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); margin-top:100px"
       >
-        <b-form @submit="onSubmit" v-if="show">
+        <b-form>
           <b-form-group id="emailAdd" description="We'll never share your email with anyone else.">
             <b-form-input
-              id="userName"
-              v-model="form.email"
+              id="userEmail"
+              v-model="form.userEmail"
               type="email"
               required
               placeholder="Enter email"
@@ -19,8 +19,8 @@
 
           <b-form-group id="userPassword">
             <b-form-input
-              id="password"
-              v-model="form.password"
+              id="confirmedPassword"
+              v-model="form.confirmedPassword"
               type="password"
               required
               placeholder="Password"
@@ -33,7 +33,7 @@
             </b-form-checkbox-group>
           </b-form-group>
 
-          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button id="btnSubmit" @click="submit" type="submit" variant="primary">Submit</b-button>
         </b-form>
       </b-card>
 
@@ -43,21 +43,24 @@
 </template>
 
 <script>
+import AUTH from "services/auth";
+import ROUTER from 'router';
 export default {
   data() {
     return {
+      auth: AUTH,
       form: {
-        email: "",
-        password: "",
+        userEmail: "",
+        confirmedPassword: "",
         checked: []
-      },
-      show: true
+      }
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
-      //console.log(JSON.stringify(this.form));
+    submit: function(e) {
+      e.preventDefault();
+      AUTH.login(this.form.userEmail, this.form.confirmedPassword);
+      // ROUTER.push('/Dashboard')
     }
   }
 };

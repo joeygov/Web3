@@ -15,8 +15,9 @@
   </div>
 </template>
 <script>
+//import AUTH from 'services/auth'
 export default {
-  name: 'home',
+  
   
 }
 </script>

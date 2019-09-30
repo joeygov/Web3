@@ -14,9 +14,10 @@ let routes = [
 {
     path: '/',
     name: 'home',
-    components: resolve => require(['components/Frame/Header.vue'], resolve)
+    components: resolve => require(['components/Login.vue'], resolve)
 }
 ]
 export default {
     routes: devRoutes
 }
+
