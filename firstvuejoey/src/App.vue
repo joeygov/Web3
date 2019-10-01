@@ -4,15 +4,15 @@
       v-show="$route.path === '/Login' || $route.path === '/registrationForm'|| $route.path === '/' ? true: false"
     ></Header>
     <AppBody></AppBody>
-    <Sidebar
+    <sidebar
       v-show="$route.path === '/Dashboard' || $route.path === '/Subjects'|| $route.path === '/PersonalInfo' ? true: false"
-    ></Sidebar>
+    ></sidebar>
   </div>
 
 </template>
 
 <script>
-import Sidebar from "components/Frame/Sidebar.vue";
+import sidebar from "components/Frame/sidebar.vue";
 import Header from "components/Frame/Header.vue";
 import AppBody from "components/Frame/Body.vue";
 export default {
@@ -20,7 +20,7 @@ export default {
   components: {
     Header,
     AppBody,
-    Sidebar
+    sidebar
   }
 };
 </script>

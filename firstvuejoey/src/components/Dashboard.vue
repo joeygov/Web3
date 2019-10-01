@@ -4,7 +4,7 @@
       <h1>Dashboard</h1>
     </div>
     <div id="card">
-      <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+      <b-card no-body class="overflow-hidden" style="max-width: 540px; box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); margin-top:100px">
         <center>
           <b-row no-gutters>
             <b-card-body>

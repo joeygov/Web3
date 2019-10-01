@@ -12,7 +12,7 @@
               id="card1"
               img-top
               tag="article"
-              style="max-width: 40rem;"
+              style="max-width: 40rem; box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); margin-top:100px"
               class="mb-2"
             >
               <table class="table">
@@ -45,7 +45,7 @@
               id="card"
               img-top
               tag="article"
-              style="max-width: 30rem;"
+              style="max-width: 30rem; box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19); margin-top:100px"
               class="mb-2"
             >
               <b-form-group label-for="input-lg">

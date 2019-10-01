@@ -20,7 +20,10 @@ export default {
             if (this.registeredUser[i].user === userEmail && this.registeredUser[i].password === confirmedPassword) {
                 ROUTER.push('/Dashboard')
                 return this.registeredUser[i]
+            }else{
+                alert("Email or Password Incorrect!")
             }
+           
 
         }
         return null
